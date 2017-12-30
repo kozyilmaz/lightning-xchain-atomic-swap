@@ -7,7 +7,7 @@ Create a separate directory and launch `lnd` for Exchange A that uses both `Bitc
 ```shell
 $ mkdir -p $HOME/exchange-a
 $ cd $HOME/exchange-a
-$ lnd --rpcport=10001 --peerport=10011 --restport=8001 --datadir=test_data --logdir=test_log --debuglevel=info --no-macaroons --bitcoin.active --bitcoin.testnet --bitcoin.rpcuser=kek --bitcoin.rpcpass=kek --litecoin.active --litecoin.testnet --litecoin.rpcuser=kek --litecoin.rpcpass=kek
+$ lnd --rpcport=10001 --peerport=10011 --restport=8001 --datadir=test_data --logdir=test_log --debuglevel=info --nobootstrap --no-macaroons --bitcoin.active --bitcoin.testnet --bitcoin.rpcuser=kek --bitcoin.rpcpass=kek --litecoin.active --litecoin.testnet --litecoin.rpcuser=kek --litecoin.rpcpass=kek
 ```
 
 Check status of Exchange A
@@ -90,7 +90,7 @@ Create a separate directory and launch `lnd` for Exchange A that uses both `Bitc
 ```shell
 $ mkdir -p $HOME/exchange-b
 $ cd $HOME/exchange-b
-$ lnd --rpcport=10002 --peerport=10012 --restport=8002 --datadir=test_data --logdir=test_log --debuglevel=info --no-macaroons --bitcoin.active --bitcoin.testnet --bitcoin.rpcuser=kek --bitcoin.rpcpass=kek --litecoin.active --litecoin.testnet --litecoin.rpcuser=kek --litecoin.rpcpass=kek
+$ lnd --rpcport=10002 --peerport=10012 --restport=8002 --datadir=test_data --logdir=test_log --debuglevel=info --nobootstrap --no-macaroons --bitcoin.active --bitcoin.testnet --bitcoin.rpcuser=kek --bitcoin.rpcpass=kek --litecoin.active --litecoin.testnet --litecoin.rpcuser=kek --litecoin.rpcpass=kek
 ```
 
 Check status of Exchange B
