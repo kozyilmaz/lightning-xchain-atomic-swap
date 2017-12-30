@@ -324,7 +324,7 @@ $ lncli --rpcserver=localhost:10001 --no-macaroons addinvoice --value=5000 --tic
 }
 ```
 
-Exchange B pays `5000 Satoshi` using encoded payment request
+Exchange B pays `5000 Litoshi` using encoded payment request
 ```shell
 $ lncli --rpcserver=localhost:10002 --no-macaroons getinfo
 {
