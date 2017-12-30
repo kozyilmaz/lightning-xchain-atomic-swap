@@ -1,5 +1,5 @@
 # Lightning Peer Connection
-First Exchange A and Exchange should connect at network level e.g. becoming peers of each other  
+First Exchange A and Exchange B should connect at network level e.g. becoming peers of each other  
 In order to do that `identity_pubkey` variable and `peerport` argument is used  
 
 ## Checking Connection State
