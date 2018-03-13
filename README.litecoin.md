@@ -57,6 +57,7 @@ $ $HOME/xu/root/bin/litecoin-qt -datadir=$HOME/xu/litecoin -testnet
 #### Litecoin Testnet Faucet
 ```
 http://testnet.thrasher.io
+http://testnet.litecointools.com
 ```
 
 #### Litecoin Testnet Explorer
