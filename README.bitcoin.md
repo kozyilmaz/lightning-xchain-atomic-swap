@@ -45,7 +45,7 @@ $ sudo apt-get install protobuf-compiler
 $ mkdir -p $HOME/xu/root
 $ git clone https://github.com/bitcoin/bitcoin.git
 $ cd bitcoin
-$ git checkout v0.15.1
+$ git checkout v0.16.0
 $ ./autogen.sh
 $ ./configure --prefix=$HOME/xu/root --enable-static --disable-shared --enable-wallet --without-libs --with-gui=qt5 --without-miniupnpc --without-qrencode --disable-tests --disable-bench
 $ make
