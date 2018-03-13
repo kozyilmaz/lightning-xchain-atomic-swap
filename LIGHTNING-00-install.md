@@ -98,5 +98,5 @@ $ ltcctl --testnet --rpcuser=kek --rpcpass=kek getinfo
 After testnet sync is done, following command can be use to launch `lnd` for testing  
 Lightning data is stored in `$HOME/.lnd` by default
 ```shell
-$ lnd --debuglevel=debug --bitcoin.active --bitcoin.testnet --bitcoin.rpcuser=kek --bitcoin.rpcpass=kek --litecoin.active --litecoin.testnet --litecoin.rpcuser=kek --litecoin.rpcpass=kek
+$ lnd --debuglevel=debug --nobootstrap --bitcoin.active --bitcoin.testnet --bitcoin.rpcuser=kek --bitcoin.rpcpass=kek --litecoin.active --litecoin.testnet --litecoin.rpcuser=kek --litecoin.rpcpass=kek
 ```
