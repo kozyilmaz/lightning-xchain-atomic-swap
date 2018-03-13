@@ -14,6 +14,11 @@ export GOPATH=$HOME/go
 export PATH=/usr/local/go/bin:$GOPATH/bin:$PATH
 ```
 
+Install `dep`
+```shell
+$ go get -u github.com/golang/dep/cmd/dep
+```
+
 Install `Glide`
 ```shell
 $ go get -u github.com/Masterminds/glide
