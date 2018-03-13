@@ -4,7 +4,7 @@
 ## Install Lightning Dependencies
 Download latest package from [offical Go repository](https://golang.org/dl/) and uncompress to `/usr/local`
 ```shell
-$ sudo tar -C /usr/local -xzf go1.9.2.linux-amd64.tar.gz
+$ sudo tar -C /usr/local -xzf go1.10.linux-amd64.tar.gz
 ```
 
 Add the following lines to the end of `$HOME/.bashrc`
