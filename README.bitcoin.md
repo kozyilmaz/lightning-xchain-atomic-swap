@@ -97,6 +97,7 @@ $ $HOME/xu/root/bin/bitcoin-qt -datadir=$HOME/xu/bitcoin -testnet
 #### Bitcoin Testnet Faucet
 ```
 https://testnet.manu.backend.hamburg/faucet
+https://testnet.coinfaucet.eu/en/
 ```
 
 #### Bitcoin Testnet Explorer
