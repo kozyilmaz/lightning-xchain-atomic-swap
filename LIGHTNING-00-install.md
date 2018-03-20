@@ -19,34 +19,14 @@ Install `dep`
 $ go get -u github.com/golang/dep/cmd/dep
 ```
 
-Install `Glide`
-```shell
-$ go get -u github.com/Masterminds/glide
-```
-
 ## Build Lightning Daemon
 
 #### Official `lnd`
-Build and install official `lnd` daemon
+Build and install official `lnd` daemon version `v0.4-beta`
 ```shell
-$ git clone https://github.com/lightningnetwork/lnd $GOPATH/src/github.com/lightningnetwork/lnd
+$ git clone -b v0.4-beta https://github.com/lightningnetwork/lnd $GOPATH/src/github.com/lightningnetwork/lnd
 $ cd $GOPATH/src/github.com/lightningnetwork/lnd
-$ glide install
-$ go install . ./cmd/...
-```
-
-However official `lnd` does not support cross chain swaps as of `lightningnetwork/lnd@6b0f984e3155adf8520d050f9b44f694fe099889`
-```shell
-$ lnd --debuglevel=debug --bitcoin.active --bitcoin.testnet --bitcoin.rpcuser=kek --bitcoin.rpcpass=kek --litecoin.active --litecoin.testnet --litecoin.rpcuser=kek --litecoin.rpcpass=kek
-loadConfig: Currently both Bitcoin and Litecoin cannot be active together
-```
-
-#### Cross-chain swap enabled `lnd`
-To build and install xchain-swap enabled experimental `lnd` daemon referenced [here](https://blog.lightning.engineering/announcement/2017/11/16/ln-swap.html)
-```shell
-$ git clone -b swapz https://github.com/cfromknecht/lnd.git $GOPATH/src/github.com/lightningnetwork/lnd
-$ cd $GOPATH/src/github.com/lightningnetwork/lnd
-$ glide install
+$ dep ensure
 $ go install . ./cmd/...
 ```
 
