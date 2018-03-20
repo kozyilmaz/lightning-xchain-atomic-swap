@@ -6,7 +6,7 @@
 $ mkdir -p $HOME/xu/root
 $ git clone https://github.com/litecoin-project/litecoin.git
 $ cd litecoin
-$ git checkout v0.14.2
+$ git checkout v0.15.1
 $ ./autogen.sh
 $ ./configure --prefix=$HOME/xu/root --enable-static --disable-shared --enable-wallet --without-libs --with-gui=qt5 --without-miniupnpc --without-qrencode --disable-tests --disable-bench
 $ make
