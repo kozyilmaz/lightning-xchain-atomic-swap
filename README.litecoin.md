@@ -48,10 +48,17 @@ total 548520
 -rwxr-xr-x 1 loki loki 148646104 Ara 26 16:06 litecoin-qt
 ```
 
-Run Litecoin client on Testnet with custom data directory
+Run Litecoin client `litecoind` or `litecoin-qt` on Testnet with custom data directory
 ```
 $ mkdir -p $HOME/xu/litecoin
-$ $HOME/xu/root/bin/litecoin-qt -datadir=$HOME/xu/litecoin -testnet
+$ $HOME/xu/root/bin/litecoind -datadir=$HOME/xu/litecoin -testnet -server -daemon -rpcuser=kek -rpcpassword=kek -zmqpubrawblock=tcp://127.0.0.1:28333 -zmqpubrawtx=tcp://127.0.0.1:28333
+# or
+$ $HOME/xu/root/bin/litecoin-qt -datadir=$HOME/xu/litecoin -testnet -server -daemon -rpcuser=kek -rpcpassword=kek -zmqpubrawblock=tcp://127.0.0.1:28333 -zmqpubrawtx=tcp://127.0.0.1:28333
+```
+
+To check JSON-RPC connection
+```
+$ $HOME/xu/root/bin/litecoin-cli -testnet -rpcuser=kek -rpcpassword=kek getblockcount
 ```
 
 #### Litecoin Testnet Faucet

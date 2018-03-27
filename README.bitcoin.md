@@ -98,7 +98,7 @@ $ $HOME/xu/root/bin/bitcoin-qt -datadir=$HOME/xu/bitcoin -testnet -server -daemo
 
 To check JSON-RPC connection
 ```
-$ $HOME/xu/root/bin/bitcoin-cli -testnet -rpcuser=kek -rpcpassword=kek -rpcport=18332 getblockcount
+$ $HOME/xu/root/bin/bitcoin-cli -testnet -rpcuser=kek -rpcpassword=kek getblockcount
 ```
 
 #### Bitcoin Testnet Faucet
