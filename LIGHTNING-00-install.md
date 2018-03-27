@@ -30,53 +30,34 @@ $ dep ensure
 $ go install . ./cmd/...
 ```
 
-#### Bitcoin full node implementation `btcd`
-Build and install `btcd` Bitcoin full node implementation
-```shell
-$ git clone https://github.com/roasbeef/btcd $GOPATH/src/github.com/roasbeef/btcd
-$ cd $GOPATH/src/github.com/roasbeef/btcd
-$ glide install
-$ go install . ./cmd/...
-```
-
-#### Litecoin full node implementation `ltcd`
-Build and install `ltcd` Litecoin full node implementation
-```shell
-$ git clone https://github.com/ltcsuite/ltcd.git $GOPATH/src/github.com/ltcsuite/ltcd
-$ cd $GOPATH/src/github.com/ltcsuite/ltcd
-$ glide install
-$ go install . ./cmd/...
-```
-
 ## Setup Blockchain Clients
 
 #### for Bitcoin
-Running the following command will create `rpc.cert`  
-Bitcoin testnet blockchain is downloaded to `$HOME/.btcd` by default
+Launch `bitcoind` or `bitcoin-qt`
 ```shell
-$ btcd --testnet --txindex --rpcuser=kek --rpcpass=kek
+$ $HOME/xu/root/bin/bitcoin-qt -datadir=$HOME/xu/bitcoin -testnet -server -daemon -rpcuser=kek -rpcpassword=kek -zmqpubrawblock=tcp://127.0.0.1:28332 -zmqpubrawtx=tcp://127.0.0.1:28332
 ```
 
-Sync progress may be tracked as follows
+Query via JSON-RPC
 ```shell
-$ btcctl --testnet --rpcuser=kek --rpcpass=kek getinfo
+$ $HOME/xu/root/bin/bitcoin-cli -testnet -rpcuser=kek -rpcpassword=kek getblockcount
 ```
 
 #### for Litecoin
-Running the following command will create `rpc.cert`  
-Litecoin testnet blockchain is downloaded to `$HOME/.ltcd` by default
+Launch `bitcoind` or `bitcoin-qt`
 ```shell
-$ ltcd --testnet --txindex --rpcuser=kek --rpcpass=kek
+$ $HOME/xu/root/bin/litecoin-qt -datadir=$HOME/xu/litecoin -testnet -server -daemon -rpcuser=kek -rpcpassword=kek -zmqpubrawblock=tcp://127.0.0.1:28333 -zmqpubrawtx=tcp://127.0.0.1:28333
 ```
 
-Sync progress may be tracked as follows
+Query via JSON-RPC
 ```shell
-$ ltcctl --testnet --rpcuser=kek --rpcpass=kek getinfo
+$ $HOME/xu/root/bin/litecoin-cli -testnet -rpcuser=kek -rpcpassword=kek getblockcount
 ```
+
 
 ## Running Lightning Daemon
 After testnet sync is done, following command can be use to launch `lnd` for testing  
 Lightning data is stored in `$HOME/.lnd` by default
 ```shell
-$ lnd --debuglevel=debug --nobootstrap --bitcoin.active --bitcoin.testnet --bitcoin.rpcuser=kek --bitcoin.rpcpass=kek --litecoin.active --litecoin.testnet --litecoin.rpcuser=kek --litecoin.rpcpass=kek
+$ lnd --rpclisten=localhost:10001 --listen=localhost:10011 --restlisten=localhost:8001 --datadir=test_data --logdir=test_log --debuglevel=info --nobootstrap --no-macaroons --bitcoin.active --bitcoin.testnet --bitcoin.node=bitcoind --bitcoind.dir=$HOME/xu/bitcoin --bitcoind.rpcuser=kek --bitcoind.rpcpass=kek --bitcoind.zmqpath=tcp://127.0.0.1:28332 --litecoin.active --litecoin.testnet --litecoin.node=litecoind --litecoind.dir=$HOME/xu/litecoin --litecoind.rpcuser=kek --litecoind.rpcpass=kek --litecoind.zmqpath=tcp://127.0.0.1:28333
 ```
