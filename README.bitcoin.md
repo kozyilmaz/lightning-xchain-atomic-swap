@@ -88,10 +88,12 @@ total 277084
 -rwxr-xr-x 1 loki loki 150048488 Ara 26 15:19 bitcoin-qt
 ```
 
-Run Bitcoin client on Testnet with custom data directory
+Run Bitcoin client `bitcoind` or `bitcoin-qt` on Testnet with custom data directory
 ```
 $ mkdir -p $HOME/xu/bitcoin
-$ $HOME/xu/root/bin/bitcoin-qt -datadir=$HOME/xu/bitcoin -testnet -server -daemon -rpcuser=kek -rpcpassword=kek -rpcport=18332 -zmqpubrawblock=tcp://127.0.0.1:28332 -zmqpubrawtx=tcp://127.0.0.1:28332
+$ $HOME/xu/root/bin/bitcoind -datadir=$HOME/xu/bitcoin -testnet -server -daemon -rpcuser=kek -rpcpassword=kek -zmqpubrawblock=tcp://127.0.0.1:28332 -zmqpubrawtx=tcp://127.0.0.1:28332
+# or
+$ $HOME/xu/root/bin/bitcoin-qt -datadir=$HOME/xu/bitcoin -testnet -server -daemon -rpcuser=kek -rpcpassword=kek -zmqpubrawblock=tcp://127.0.0.1:28332 -zmqpubrawtx=tcp://127.0.0.1:28332
 ```
 
 To check JSON-RPC connection
