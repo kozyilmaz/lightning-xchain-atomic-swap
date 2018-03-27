@@ -91,7 +91,7 @@ total 277084
 Run Bitcoin client on Testnet with custom data directory
 ```
 $ mkdir -p $HOME/xu/bitcoin
-$ $HOME/xu/root/bin/bitcoin-qt -datadir=$HOME/xu/bitcoin -testnet
+$ $HOME/xu/root/bin/bitcoin-qt -datadir=$HOME/xu/bitcoin -testnet -server -rpcuser=kek -rpcpassword=kek -zmqpubrawblock=tcp://127.0.0.1:28332 -zmqpubrawtx=tcp://127.0.0.1:28332
 ```
 
 #### Bitcoin Testnet Faucet
