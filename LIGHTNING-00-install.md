@@ -4,7 +4,7 @@
 ## Install Lightning Dependencies
 Download latest package from [offical Go repository](https://golang.org/dl/) and uncompress to `/usr/local`
 ```shell
-$ sudo tar -C /usr/local -xzf go1.10.linux-amd64.tar.gz
+$ sudo tar -C /usr/local -xzf go1.10.1.linux-amd64.tar.gz
 ```
 
 Add the following lines to the end of `$HOME/.bashrc`
@@ -12,16 +12,6 @@ Add the following lines to the end of `$HOME/.bashrc`
 # add Go paths
 export GOPATH=$HOME/go
 export PATH=/usr/local/go/bin:$GOPATH/bin:$PATH
-```
-
-Install `dep`
-```shell
-$ go get -u github.com/golang/dep/cmd/dep
-```
-
-Install `Glide`
-```shell
-$ go get -u github.com/Masterminds/glide
 ```
 
 ## Build Lightning Daemon
@@ -42,6 +32,11 @@ loadConfig: Currently both Bitcoin and Litecoin cannot be active together
 ```
 
 #### Cross-chain swap enabled `lnd`
+Install `Glide`
+```shell
+$ go get -u github.com/Masterminds/glide
+```
+
 To build and install xchain-swap enabled experimental `lnd` daemon referenced [here](https://blog.lightning.engineering/announcement/2017/11/16/ln-swap.html)
 ```shell
 $ git clone -b swapz https://github.com/cfromknecht/lnd.git $GOPATH/src/github.com/lightningnetwork/lnd
