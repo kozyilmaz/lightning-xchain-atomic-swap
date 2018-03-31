@@ -16,20 +16,7 @@ export PATH=/usr/local/go/bin:$GOPATH/bin:$PATH
 
 ## Build Lightning Daemon
 
-#### Official `lnd`
-Build and install official `lnd` daemon
-```shell
-$ git clone https://github.com/lightningnetwork/lnd $GOPATH/src/github.com/lightningnetwork/lnd
-$ cd $GOPATH/src/github.com/lightningnetwork/lnd
-$ glide install
-$ go install . ./cmd/...
-```
-
-However official `lnd` does not support cross chain swaps as of `lightningnetwork/lnd@6b0f984e3155adf8520d050f9b44f694fe099889`
-```shell
-$ lnd --debuglevel=debug --bitcoin.active --bitcoin.testnet --bitcoin.rpcuser=kek --bitcoin.rpcpass=kek --litecoin.active --litecoin.testnet --litecoin.rpcuser=kek --litecoin.rpcpass=kek
-loadConfig: Currently both Bitcoin and Litecoin cannot be active together
-```
+Official `lnd` does not support cross chain swaps, so a specific fork/branch should be built
 
 #### Cross-chain swap enabled `lnd`
 Install `Glide`
