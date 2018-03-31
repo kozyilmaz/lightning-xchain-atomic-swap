@@ -2,9 +2,9 @@
 [Lightning Installation Guide](https://github.com/lightningnetwork/lnd/blob/master/docs/INSTALL.md) is used to build the dependencies (`Go`), currency daemons (`btcd` and `ltcd`) and the actual `lnd` daemon.  
 
 ## Install Lightning Dependencies
-Download latest package from [offical Go repository](https://golang.org/dl/) and uncompress to `/usr/local`
+Download 1.9.5 package from [offical Go repository](https://golang.org/dl/) and uncompress to `/usr/local`
 ```shell
-$ sudo tar -C /usr/local -xzf go1.10.1.linux-amd64.tar.gz
+$ sudo tar -C /usr/local -xzf go1.9.5.linux-amd64.tar.gz
 ```
 
 Add the following lines to the end of `$HOME/.bashrc`
