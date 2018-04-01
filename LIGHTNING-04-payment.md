@@ -5,26 +5,26 @@ Exchange B creates invoice for `1000 Satoshi`
 ```shell
 $ lncli --rpcserver=localhost:10002 --no-macaroons addinvoice --value=1000 --ticker=BTC
 {
-    "r_hash": "ded910abaaf18047541bcee8d58e24da98f9ef87c124a993904da99d891c5cbf",
-    "pay_req": "lntb10u1pdytm2qpp5mmv3p2a27xqyw4qmem5dtr3ym2v0nmu8cyj2nyusfk5emzgutjlsdqqcqzysw345mnfc55vrqkjpj6rw3227wpnsm5lj6ujaaq8z0rvlzzluevjhd2xdx8gcrcundxpqa698ej6akr0ptem8jacuekkxwdzd85hf2wspyrfnwn"
+    "r_hash": "f7cbc815a28a0087a0390482c14b120fd7f25cd65c7480c0fac0f3b41d81388c",
+    "pay_req": "lntb10u1pdvp8c8pp57l9us9dz3gqg0gpeqjpvzjcjpltlyhxkt36gps86cremg8vp8zxqdqqcqzyscksu2dht9wk76felgan8zpfcr0xuwv7cv98z3tcp5c8q42ynz0xz3553jagwrp078cveughg3h73ze0f5rz2fuau3kqmemf04d47c3qqsn53x9"
 }
 ```
 
 Exchange A pays `1000 Satoshi` using encoded payment request
 ```shell
-$ lncli --rpcserver=localhost:10001 --no-macaroons sendpayment --pay_req=lntb10u1pdytm2qpp5mmv3p2a27xqyw4qmem5dtr3ym2v0nmu8cyj2nyusfk5emzgutjlsdqqcqzysw345mnfc55vrqkjpj6rw3227wpnsm5lj6ujaaq8z0rvlzzluevjhd2xdx8gcrcundxpqa698ej6akr0ptem8jacuekkxwdzd85hf2wspyrfnwn
+$ lncli --rpcserver=localhost:10001 --no-macaroons sendpayment --pay_req=lntb10u1pdvp8c8pp57l9us9dz3gqg0gpeqjpvzjcjpltlyhxkt36gps86cremg8vp8zxqdqqcqzyscksu2dht9wk76felgan8zpfcr0xuwv7cv98z3tcp5c8q42ynz0xz3553jagwrp078cveughg3h73ze0f5rz2fuau3kqmemf04d47c3qqsn53x9
 {
     "payment_error": "",
-    "payment_preimage": "2e2384405a8f6771c30f7b560c62914b07ef7e9f5ce42772a1da6facc92dd551",
+    "payment_preimage": "a533241f208d7269c04900c661df75d78972418de4627fb972f8e50211663e74",
     "payment_route": {
-	"total_time_lock": 1256822,
+	"total_time_lock": 1290058,
 	"total_amt": 1000,
 	"hops": [
 	    {
-		"chan_id": 1381475887161802752,
+		"chan_id": 1418272143300296704,
 		"chan_capacity": 16000000,
 		"amt_to_forward": 1000,
-		"expiry": 1256822
+		"expiry": 1290058
 	    }
 	]
     }
@@ -35,20 +35,20 @@ $ lncli --rpcserver=localhost:10001 --no-macaroons sendpayment --pay_req=lntb10u
 ```shell
 $ lncli --rpcserver=localhost:10001 --no-macaroons walletbalance --ticker=BTC
 {
-    "balance": "83991564"
+    "balance": "48991564"
 }
 $ lncli --rpcserver=localhost:10001 --no-macaroons walletbalance --ticker=LTC
 {
-    "balance": "10000000"
+    "balance": "1000000000"
 }
 $ lncli --rpcserver=localhost:10001 --no-macaroons listchannels
 {
     "channels": [
 	{
 	    "active": true,
-	    "remote_pubkey": "0248a05db7c3996df2699fca9a9a1f843c723b50a6178e805416150b199b5c44bc",
-	    "channel_point": "1051ea63b1928714c8e319eeab0abb2fb639ea7c007315f26383132c500fe077:0",
-	    "chan_id": "1381475887161802752",
+	    "remote_pubkey": "026832da661d53ee23e88909b70ed1768825deb22f26b0d5519ad0c78a1e528676",
+	    "channel_point": "091420448e9ae1e2f207ffc77abad6fb4d18bbd253053ba74d82c721f0d43d06:0",
+	    "chan_id": "1418272143300296704",
 	    "capacity": "16000000",
 	    "local_balance": "15991312",
 	    "remote_balance": "0",
@@ -58,14 +58,14 @@ $ lncli --rpcserver=localhost:10001 --no-macaroons listchannels
 	    "unsettled_balance": "0",
 	    "total_satoshis_sent": "0",
 	    "total_satoshis_received": "0",
-	    "num_updates": "26",
+	    "num_updates": "0",
 	    "pending_htlcs": []
 	},
 	{
 	    "active": true,
-	    "remote_pubkey": "0248a05db7c3996df2699fca9a9a1f843c723b50a6178e805416150b199b5c44bc",
-	    "channel_point": "70b9250e7ebf4a069823d884d1fb7d23fe4a02e27f96a6905a6857724bf3f1f4:0",
-	    "chan_id": "333714973170008064",
+	    "remote_pubkey": "026832da661d53ee23e88909b70ed1768825deb22f26b0d5519ad0c78a1e528676",
+	    "channel_point": "17285434991d24039ed8eac6761873e89fa9c90c4c70b0a94255e6c67673536f:0",
+	    "chan_id": "527244412821045248",
 	    "capacity": "10000000",
 	    "local_balance": "0",
 	    "remote_balance": "9963800",
@@ -84,21 +84,22 @@ $ lncli --rpcserver=localhost:10001 --no-macaroons listchannels
 
 #### Exchange A's Balances & Channel Status Post Payment
 ```shell
-$ lncli --rpcserver=localhost:10001 --no-macaroons walletbalance --ticker=BTC{
-    "balance": "83991564"
+$ lncli --rpcserver=localhost:10001 --no-macaroons walletbalance --ticker=BTC
+{
+    "balance": "48991564"
 }
 $ lncli --rpcserver=localhost:10001 --no-macaroons walletbalance --ticker=LTC
 {
-    "balance": "10000000"
+    "balance": "1000000000"
 }
 $ lncli --rpcserver=localhost:10001 --no-macaroons listchannels
 {
     "channels": [
 	{
 	    "active": true,
-	    "remote_pubkey": "0248a05db7c3996df2699fca9a9a1f843c723b50a6178e805416150b199b5c44bc",
-	    "channel_point": "1051ea63b1928714c8e319eeab0abb2fb639ea7c007315f26383132c500fe077:0",
-	    "chan_id": "1381475887161802752",
+	    "remote_pubkey": "026832da661d53ee23e88909b70ed1768825deb22f26b0d5519ad0c78a1e528676",
+	    "channel_point": "091420448e9ae1e2f207ffc77abad6fb4d18bbd253053ba74d82c721f0d43d06:0",
+	    "chan_id": "1418272143300296704",
 	    "capacity": "16000000",
 	    "local_balance": "15990312",
 	    "remote_balance": "1000",
@@ -108,14 +109,14 @@ $ lncli --rpcserver=localhost:10001 --no-macaroons listchannels
 	    "unsettled_balance": "0",
 	    "total_satoshis_sent": "1000",
 	    "total_satoshis_received": "0",
-	    "num_updates": "28",
+	    "num_updates": "2",
 	    "pending_htlcs": []
 	},
 	{
 	    "active": true,
-	    "remote_pubkey": "0248a05db7c3996df2699fca9a9a1f843c723b50a6178e805416150b199b5c44bc",
-	    "channel_point": "70b9250e7ebf4a069823d884d1fb7d23fe4a02e27f96a6905a6857724bf3f1f4:0",
-	    "chan_id": "333714973170008064",
+	    "remote_pubkey": "026832da661d53ee23e88909b70ed1768825deb22f26b0d5519ad0c78a1e528676",
+	    "channel_point": "17285434991d24039ed8eac6761873e89fa9c90c4c70b0a94255e6c67673536f:0",
+	    "chan_id": "527244412821045248",
 	    "capacity": "10000000",
 	    "local_balance": "0",
 	    "remote_balance": "9963800",
