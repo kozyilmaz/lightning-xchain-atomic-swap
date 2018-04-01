@@ -235,17 +235,25 @@ $ lncli --rpcserver=localhost:10002 --no-macaroons listchannels
 
 
 ## Litecoin Payment
-Exchange A creates invoice for `5000 Litoshi`
+Exchange A creates invoice for `2000 Litoshi`
 ```shell
+$ lncli --rpcserver=localhost:10001 --no-macaroons walletbalance --ticker=BTC
+{
+    "balance": "48991564"
+}
+$ lncli --rpcserver=localhost:10001 --no-macaroons walletbalance --ticker=LTC
+{
+    "balance": "1000000000"
+}
 $ lncli --rpcserver=localhost:10001 --no-macaroons getinfo
 {
-    "identity_pubkey": "026a2f91860f43b03aff44246652a464e68a678251d6d6e0f24a8c4398b8333aa7",
+    "identity_pubkey": "0279a2f2b499a5345f17d35eff76d5ab45d252560f63347b96e42f8b80045ca435",
     "alias": "",
     "num_pending_channels": 0,
     "num_active_channels": 2,
     "num_peers": 1,
-    "block_height": 1256780,
-    "block_hash": "00000000e1b4c3539106670d90e5c6cc02416cff67c58cf65a31aa69024aaa9d",
+    "block_height": 1289918,
+    "block_hash": "000000000000038592e3ec98a496f3d2ba40610db958d91f1ca552a31a309f47",
     "synced_to_chain": true,
     "testnet": true,
     "chains": [
@@ -253,38 +261,14 @@ $ lncli --rpcserver=localhost:10001 --no-macaroons getinfo
 	"bitcoin"
     ]
 }
-$ lncli --rpcserver=localhost:10001 --no-macaroons walletbalance --ticker=BTC
-{
-    "balance": "83991564"
-}
-$ lncli --rpcserver=localhost:10001 --no-macaroons walletbalance --ticker=LTC
-{
-    "balance": "10000000"
-}
-$ lncli --rpcserver=localhost:10001 --no-macaroons listpeers
-{
-    "peers": [
-	{
-	    "pub_key": "0248a05db7c3996df2699fca9a9a1f843c723b50a6178e805416150b199b5c44bc",
-	    "peer_id": 1,
-	    "address": "127.0.0.1:37576",
-	    "bytes_sent": "290569",
-	    "bytes_recv": "291693",
-	    "sat_sent": "1000",
-	    "sat_recv": "0",
-	    "inbound": false,
-	    "ping_time": "304"
-	}
-    ]
-}
 $ lncli --rpcserver=localhost:10001 --no-macaroons listchannels
 {
     "channels": [
 	{
 	    "active": true,
-	    "remote_pubkey": "0248a05db7c3996df2699fca9a9a1f843c723b50a6178e805416150b199b5c44bc",
-	    "channel_point": "1051ea63b1928714c8e319eeab0abb2fb639ea7c007315f26383132c500fe077:0",
-	    "chan_id": "1381475887161802752",
+	    "remote_pubkey": "026832da661d53ee23e88909b70ed1768825deb22f26b0d5519ad0c78a1e528676",
+	    "channel_point": "091420448e9ae1e2f207ffc77abad6fb4d18bbd253053ba74d82c721f0d43d06:0",
+	    "chan_id": "1418272143300296704",
 	    "capacity": "16000000",
 	    "local_balance": "15990312",
 	    "remote_balance": "1000",
@@ -294,14 +278,14 @@ $ lncli --rpcserver=localhost:10001 --no-macaroons listchannels
 	    "unsettled_balance": "0",
 	    "total_satoshis_sent": "1000",
 	    "total_satoshis_received": "0",
-	    "num_updates": "30",
+	    "num_updates": "4",
 	    "pending_htlcs": []
 	},
 	{
 	    "active": true,
-	    "remote_pubkey": "0248a05db7c3996df2699fca9a9a1f843c723b50a6178e805416150b199b5c44bc",
-	    "channel_point": "70b9250e7ebf4a069823d884d1fb7d23fe4a02e27f96a6905a6857724bf3f1f4:0",
-	    "chan_id": "333714973170008064",
+	    "remote_pubkey": "026832da661d53ee23e88909b70ed1768825deb22f26b0d5519ad0c78a1e528676",
+	    "channel_point": "17285434991d24039ed8eac6761873e89fa9c90c4c70b0a94255e6c67673536f:0",
+	    "chan_id": "527244412821045248",
 	    "capacity": "10000000",
 	    "local_balance": "0",
 	    "remote_balance": "9963800",
@@ -316,24 +300,47 @@ $ lncli --rpcserver=localhost:10001 --no-macaroons listchannels
 	}
     ]
 }
-$ lncli --rpcserver=localhost:10001 --no-macaroons addinvoice --value=5000 --ticker=LTC
+$ lncli --rpcserver=localhost:10001 --no-macaroons listpeers
 {
-    "r_hash": "ff8492a7c4a58a5ead0ec323ba6602f3fa20cd18967796c8326e0076c8a4d880",
-    "pay_req": "lntl50u1pdywka8pp5l7zf9f7y5k99atgwcv3m5esz70azpngcjemedjpjdcq8dj9ymzqqdqqcqzysqakr7lhcnd5kqvvz4j838u2n7f59863aps39ul0zwqwgq9wglwm4r7jpexu4283xfh84lycaxupcv82g75pqmvlsf5cgfysdjfklzysqtqzfae"
+    "peers": [
+	{
+	    "pub_key": "026832da661d53ee23e88909b70ed1768825deb22f26b0d5519ad0c78a1e528676",
+	    "peer_id": 1,
+	    "address": "127.0.0.1:45948",
+	    "bytes_sent": "4358",
+	    "bytes_recv": "3242",
+	    "sat_sent": "1000",
+	    "sat_recv": "0",
+	    "inbound": false,
+	    "ping_time": "558"
+	}
+    ]
+}
+$ lncli --rpcserver=localhost:10001 --no-macaroons addinvoice --value=2000 --ticker=LTC{
+    "r_hash": "76898fbcb803cf9b6f022d298cc2f3bcc926f7e51ceb39650540f956e1b8c730",
+    "pay_req": "lntl20u1pdvptxapp5w6ycl09cq08ekmcz955ceshnhnyjdal9rn4njeg9gru4dcdccucqdqqcqzyse5fz95ln3vwwdemhcs33hwrq47fjqws3l23vc96uca8uz6rhgeez62d0tetzvm08k0ew9y6jg3aujapj0nadep4wn3yfnmxvjgepzkqpf29gyx"
 }
 ```
 
-Exchange B pays `5000 Litoshi` using encoded payment request
+Exchange B pays `2000 Litoshi` using encoded payment request
 ```shell
+$ lncli --rpcserver=localhost:10002 --no-macaroons walletbalance --ticker=BTC
+{
+    "balance": "32500000"
+}
+$ lncli --rpcserver=localhost:10002 --no-macaroons walletbalance --ticker=LTC
+{
+    "balance": "489964850"
+}
 $ lncli --rpcserver=localhost:10002 --no-macaroons getinfo
 {
-    "identity_pubkey": "0248a05db7c3996df2699fca9a9a1f843c723b50a6178e805416150b199b5c44bc",
+    "identity_pubkey": "026832da661d53ee23e88909b70ed1768825deb22f26b0d5519ad0c78a1e528676",
     "alias": "",
     "num_pending_channels": 0,
     "num_active_channels": 2,
     "num_peers": 1,
-    "block_height": 1256780,
-    "block_hash": "00000000e1b4c3539106670d90e5c6cc02416cff67c58cf65a31aa69024aaa9d",
+    "block_height": 1289918,
+    "block_hash": "000000000000038592e3ec98a496f3d2ba40610db958d91f1ca552a31a309f47",
     "synced_to_chain": true,
     "testnet": true,
     "chains": [
@@ -341,38 +348,14 @@ $ lncli --rpcserver=localhost:10002 --no-macaroons getinfo
 	"bitcoin"
     ]
 }
-$ lncli --rpcserver=localhost:10002 --no-macaroons walletbalance --ticker=BTC
-{
-    "balance": "130000000"
-}
-$ lncli --rpcserver=localhost:10002 --no-macaroons walletbalance --ticker=LTC
-{
-    "balance": "989964850"
-}
-$ lncli --rpcserver=localhost:10002 --no-macaroons listpeers
-{
-    "peers": [
-	{
-	    "pub_key": "026a2f91860f43b03aff44246652a464e68a678251d6d6e0f24a8c4398b8333aa7",
-	    "peer_id": 1,
-	    "address": "127.0.0.1:10011",
-	    "bytes_sent": "291719",
-	    "bytes_recv": "290595",
-	    "sat_sent": "0",
-	    "sat_recv": "1000",
-	    "inbound": true,
-	    "ping_time": "267"
-	}
-    ]
-}
 $ lncli --rpcserver=localhost:10002 --no-macaroons listchannels
 {
     "channels": [
 	{
 	    "active": true,
-	    "remote_pubkey": "026a2f91860f43b03aff44246652a464e68a678251d6d6e0f24a8c4398b8333aa7",
-	    "channel_point": "1051ea63b1928714c8e319eeab0abb2fb639ea7c007315f26383132c500fe077:0",
-	    "chan_id": "1381475887161802752",
+	    "remote_pubkey": "0279a2f2b499a5345f17d35eff76d5ab45d252560f63347b96e42f8b80045ca435",
+	    "channel_point": "091420448e9ae1e2f207ffc77abad6fb4d18bbd253053ba74d82c721f0d43d06:0",
+	    "chan_id": "1418272143300296704",
 	    "capacity": "16000000",
 	    "local_balance": "1000",
 	    "remote_balance": "15990312",
@@ -382,14 +365,14 @@ $ lncli --rpcserver=localhost:10002 --no-macaroons listchannels
 	    "unsettled_balance": "0",
 	    "total_satoshis_sent": "0",
 	    "total_satoshis_received": "1000",
-	    "num_updates": "30",
+	    "num_updates": "4",
 	    "pending_htlcs": []
 	},
 	{
 	    "active": true,
-	    "remote_pubkey": "026a2f91860f43b03aff44246652a464e68a678251d6d6e0f24a8c4398b8333aa7",
-	    "channel_point": "70b9250e7ebf4a069823d884d1fb7d23fe4a02e27f96a6905a6857724bf3f1f4:0",
-	    "chan_id": "333714973170008064",
+	    "remote_pubkey": "0279a2f2b499a5345f17d35eff76d5ab45d252560f63347b96e42f8b80045ca435",
+	    "channel_point": "17285434991d24039ed8eac6761873e89fa9c90c4c70b0a94255e6c67673536f:0",
+	    "chan_id": "527244412821045248",
 	    "capacity": "10000000",
 	    "local_balance": "9963800",
 	    "remote_balance": "0",
@@ -404,6 +387,22 @@ $ lncli --rpcserver=localhost:10002 --no-macaroons listchannels
 	}
     ]
 }
-$ lncli --rpcserver=localhost:10002 --no-macaroons sendpayment --pay_req=lntl50u1pdywka8pp5l7zf9f7y5k99atgwcv3m5esz70azpngcjemedjpjdcq8dj9ymzqqdqqcqzysqakr7lhcnd5kqvvz4j838u2n7f59863aps39ul0zwqwgq9wglwm4r7jpexu4283xfh84lycaxupcv82g75pqmvlsf5cgfysdjfklzysqtqzfae
+$ lncli --rpcserver=localhost:10002 --no-macaroons listpeers
+{
+    "peers": [
+	{
+	    "pub_key": "0279a2f2b499a5345f17d35eff76d5ab45d252560f63347b96e42f8b80045ca435",
+	    "peer_id": 1,
+	    "address": "127.0.0.1:10011",
+	    "bytes_sent": "3320",
+	    "bytes_recv": "4436",
+	    "sat_sent": "0",
+	    "sat_recv": "1000",
+	    "inbound": true,
+	    "ping_time": "454"
+	}
+    ]
+}
+$ lncli --rpcserver=localhost:10002 --no-macaroons sendpayment --pay_req=lntl20u1pdvptxapp5w6ycl09cq08ekmcz955ceshnhnyjdal9rn4njeg9gru4dcdccucqdqqcqzyse5fz95ln3vwwdemhcs33hwrq47fjqws3l23vc96uca8uz6rhgeez62d0tetzvm08k0ew9y6jg3aujapj0nadep4wn3yfnmxvjgepzkqpf29gyx
 [lncli] rpc error: code = Unknown desc = unknown network
 ```
