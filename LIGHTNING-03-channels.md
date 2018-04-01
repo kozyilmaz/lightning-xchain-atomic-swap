@@ -41,9 +41,9 @@ $ lncli --rpcserver=localhost:10001 --no-macaroons listchannels
     "channels": [
 	{
 	    "active": true,
-	    "remote_pubkey": "0248a05db7c3996df2699fca9a9a1f843c723b50a6178e805416150b199b5c44bc",
-	    "channel_point": "1051ea63b1928714c8e319eeab0abb2fb639ea7c007315f26383132c500fe077:0",
-	    "chan_id": "1381475887161802752",
+	    "remote_pubkey": "026832da661d53ee23e88909b70ed1768825deb22f26b0d5519ad0c78a1e528676",
+	    "channel_point": "091420448e9ae1e2f207ffc77abad6fb4d18bbd253053ba74d82c721f0d43d06:0",
+	    "chan_id": "1418272143300296704",
 	    "capacity": "16000000",
 	    "local_balance": "15991312",
 	    "remote_balance": "0",
@@ -67,9 +67,9 @@ $ lncli --rpcserver=localhost:10002 --no-macaroons listchannels
     "channels": [
 	{
 	    "active": true,
-	    "remote_pubkey": "026a2f91860f43b03aff44246652a464e68a678251d6d6e0f24a8c4398b8333aa7",
-	    "channel_point": "1051ea63b1928714c8e319eeab0abb2fb639ea7c007315f26383132c500fe077:0",
-	    "chan_id": "1381475887161802752",
+	    "remote_pubkey": "0279a2f2b499a5345f17d35eff76d5ab45d252560f63347b96e42f8b80045ca435",
+	    "channel_point": "091420448e9ae1e2f207ffc77abad6fb4d18bbd253053ba74d82c721f0d43d06:0",
+	    "chan_id": "1418272143300296704",
 	    "capacity": "16000000",
 	    "local_balance": "0",
 	    "remote_balance": "15991312",
@@ -90,11 +90,11 @@ Exchange A's `Bitcoin` balance decreased due to the committed amount in payment 
 ```
 $ lncli --rpcserver=localhost:10001 --no-macaroons walletbalance --ticker=BTC
 {
-    "balance": "83991564"
+    "balance": "48991564"
 }
 $ lncli --rpcserver=localhost:10001 --no-macaroons walletbalance --ticker=LTC
 {
-    "balance": "10000000"
+    "balance": "1000000000"
 }
 ```
 
@@ -106,7 +106,6 @@ $ lncli --rpcserver=localhost:10001 --no-macaroons queryswaproutes --dest=$X_B_I
 [lncli] rpc error: code = Unknown desc = unable to find a path to destination
 $ lncli --rpcserver=localhost:10001 --no-macaroons queryswaproutes --dest=$X_B_ID_PUBKEY --in_amt=1000 --in_ticker=LTC --out_ticker=BTC
 [lncli] rpc error: code = Unknown desc = unable to find a path to destination
-
 ```
 
 Exchange B has no swap route to Exchange A yet
