@@ -17,19 +17,18 @@ $ lncli --rpcserver=localhost:10001 --no-macaroons listchannels
 }
 ```
 
-Exchange A tries to open `0.9 BTC` channel to Exchange B, getting limit error imposed by the [spec](https://github.com/lightningnetwork/lightning-rfc/blob/master/02-peer-protocol.md#requirements)
+Exchange A tries to open `0.3 BTC` channel to Exchange B, getting limit error imposed by the [spec](https://github.com/lightningnetwork/lightning-rfc/blob/master/02-peer-protocol.md#requirements)
 ```shell
-$ lncli --rpcserver=localhost:10001 --no-macaroons openchannel --node_key=$X_B_ID_PUBKEY --local_amt=90000000 --ticker=BTC
+$ lncli --rpcserver=localhost:10001 --no-macaroons openchannel --node_key=$X_B_ID_PUBKEY --local_amt=30000000 --ticker=BTC
 [lncli] rpc error: code = Unknown desc = funding amount is too large, the max channel size is: 0.16777216 BTC
 ```
 
-Exchange A opens `0.16 BTC` channel to Exchange B with the following [BTC funding transaction](https://www.blocktrail.com/tBTC/tx/1051ea63b1928714c8e319eeab0abb2fb639ea7c007315f26383132c500fe077)
+Exchange A opens `0.16 BTC` channel to Exchange B with the following [BTC funding transaction](https://testnet.blockchain.info/tx/091420448e9ae1e2f207ffc77abad6fb4d18bbd253053ba74d82c721f0d43d06)
 ```shell
 $ lncli --rpcserver=localhost:10001 --no-macaroons openchannel --node_key=$X_B_ID_PUBKEY --local_amt=16000000 --ticker=BTC
 {
-    "funding_txid": "1051ea63b1928714c8e319eeab0abb2fb639ea7c007315f26383132c500fe077"
+    "funding_txid": "091420448e9ae1e2f207ffc77abad6fb4d18bbd253053ba74d82c721f0d43d06"
 }
-
 ```
 
 Funding transaction must be confirmed before a channel is opened.
