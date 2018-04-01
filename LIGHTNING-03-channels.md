@@ -160,9 +160,9 @@ $ lncli --rpcserver=localhost:10002 --no-macaroons listchannels
     "channels": [
 	{
 	    "active": true,
-	    "remote_pubkey": "026a2f91860f43b03aff44246652a464e68a678251d6d6e0f24a8c4398b8333aa7",
-	    "channel_point": "1051ea63b1928714c8e319eeab0abb2fb639ea7c007315f26383132c500fe077:0",
-	    "chan_id": "1381475887161802752",
+	    "remote_pubkey": "0279a2f2b499a5345f17d35eff76d5ab45d252560f63347b96e42f8b80045ca435",
+	    "channel_point": "091420448e9ae1e2f207ffc77abad6fb4d18bbd253053ba74d82c721f0d43d06:0",
+	    "chan_id": "1418272143300296704",
 	    "capacity": "16000000",
 	    "local_balance": "0",
 	    "remote_balance": "15991312",
@@ -177,9 +177,9 @@ $ lncli --rpcserver=localhost:10002 --no-macaroons listchannels
 	},
 	{
 	    "active": true,
-	    "remote_pubkey": "026a2f91860f43b03aff44246652a464e68a678251d6d6e0f24a8c4398b8333aa7",
-	    "channel_point": "70b9250e7ebf4a069823d884d1fb7d23fe4a02e27f96a6905a6857724bf3f1f4:0",
-	    "chan_id": "333714973170008064",
+	    "remote_pubkey": "0279a2f2b499a5345f17d35eff76d5ab45d252560f63347b96e42f8b80045ca435",
+	    "channel_point": "17285434991d24039ed8eac6761873e89fa9c90c4c70b0a94255e6c67673536f:0",
+	    "chan_id": "527244412821045248",
 	    "capacity": "10000000",
 	    "local_balance": "9963800",
 	    "remote_balance": "0",
@@ -203,9 +203,9 @@ $ lncli --rpcserver=localhost:10001 --no-macaroons listchannels
     "channels": [
 	{
 	    "active": true,
-	    "remote_pubkey": "0248a05db7c3996df2699fca9a9a1f843c723b50a6178e805416150b199b5c44bc",
-	    "channel_point": "1051ea63b1928714c8e319eeab0abb2fb639ea7c007315f26383132c500fe077:0",
-	    "chan_id": "1381475887161802752",
+	    "remote_pubkey": "026832da661d53ee23e88909b70ed1768825deb22f26b0d5519ad0c78a1e528676",
+	    "channel_point": "091420448e9ae1e2f207ffc77abad6fb4d18bbd253053ba74d82c721f0d43d06:0",
+	    "chan_id": "1418272143300296704",
 	    "capacity": "16000000",
 	    "local_balance": "15991312",
 	    "remote_balance": "0",
@@ -220,9 +220,9 @@ $ lncli --rpcserver=localhost:10001 --no-macaroons listchannels
 	},
 	{
 	    "active": true,
-	    "remote_pubkey": "0248a05db7c3996df2699fca9a9a1f843c723b50a6178e805416150b199b5c44bc",
-	    "channel_point": "70b9250e7ebf4a069823d884d1fb7d23fe4a02e27f96a6905a6857724bf3f1f4:0",
-	    "chan_id": "333714973170008064",
+	    "remote_pubkey": "026832da661d53ee23e88909b70ed1768825deb22f26b0d5519ad0c78a1e528676",
+	    "channel_point": "17285434991d24039ed8eac6761873e89fa9c90c4c70b0a94255e6c67673536f:0",
+	    "chan_id": "527244412821045248",
 	    "capacity": "10000000",
 	    "local_balance": "0",
 	    "remote_balance": "9963800",
@@ -243,11 +243,11 @@ NOTE: Exchange B's `Litecoin` balance is locked until funding transaction is con
 ```shell
 $ lncli --rpcserver=localhost:10002 --no-macaroons walletbalance --ticker=BTC
 {
-    "balance": "130000000"
+    "balance": "32500000"
 }
 $ lncli --rpcserver=localhost:10002 --no-macaroons walletbalance --ticker=LTC
 {
-    "balance": "0"
+    "balance": "500000000"
 }
 ```
 
@@ -255,11 +255,11 @@ Exchange B's `Litecoin` balance after funding transaction is confirmed
 ```shell
 $ lncli --rpcserver=localhost:10002 --no-macaroons walletbalance --ticker=BTC
 {
-    "balance": "130000000"
+    "balance": "32500000"
 }
 $ lncli --rpcserver=localhost:10002 --no-macaroons walletbalance --ticker=LTC
 {
-    "balance": "989964850"
+    "balance": "489964850"
 }
 ```
 
