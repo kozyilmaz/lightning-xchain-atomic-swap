@@ -8,13 +8,13 @@ In order to do that `identity_pubkey` variable and `peerport` argument is used
 ```shell
 $ lncli --rpcserver=localhost:10001 --no-macaroons getinfo
 {
-    "identity_pubkey": "026a2f91860f43b03aff44246652a464e68a678251d6d6e0f24a8c4398b8333aa7",
+    "identity_pubkey": "0279a2f2b499a5345f17d35eff76d5ab45d252560f63347b96e42f8b80045ca435",
     "alias": "",
     "num_pending_channels": 0,
     "num_active_channels": 0,
-    "num_peers": 1,
-    "block_height": 1256437,
-    "block_hash": "0000000000000678c1b3e9d5c150f585e97091ac3d81e805fb9efc9c1340b0d5",
+    "num_peers": 0,
+    "block_height": 1289908,
+    "block_hash": "00000000d3924d33d7a20da5608516d145261ce78388979816af095f0446c78b",
     "synced_to_chain": true,
     "testnet": true,
     "chains": [
@@ -32,18 +32,18 @@ $ lncli --rpcserver=localhost:10001 --no-macaroons listpeers
 ```shell
 $ lncli --rpcserver=localhost:10002 --no-macaroons getinfo
 {
-    "identity_pubkey": "0248a05db7c3996df2699fca9a9a1f843c723b50a6178e805416150b199b5c44bc",
+    "identity_pubkey": "026832da661d53ee23e88909b70ed1768825deb22f26b0d5519ad0c78a1e528676",
     "alias": "",
     "num_pending_channels": 0,
     "num_active_channels": 0,
     "num_peers": 0,
-    "block_height": 1256431,
-    "block_hash": "000000000000015571221c48ec7e6a48ddbaeba29d38da5b40fb06639677a4ab",
+    "block_height": 1289909,
+    "block_hash": "0000000000000376f45b56843cb7b4d44b526bf5285191df937bce31fdec31ef",
     "synced_to_chain": true,
     "testnet": true,
     "chains": [
-	"litecoin",
-	"bitcoin"
+	"bitcoin",
+	"litecoin"
     ]
 }
 $ lncli --rpcserver=localhost:10002 --no-macaroons listpeers
@@ -56,11 +56,10 @@ $ lncli --rpcserver=localhost:10002 --no-macaroons listpeers
 ## Establishing Connection
 By using Exchange A's `identity_pubkey`, host and port number `peerport`, Exchange B establish connection using the command below
 ```shell
-$ X_A_ID_PUBKEY=026a2f91860f43b03aff44246652a464e68a678251d6d6e0f24a8c4398b8333aa7
-$ HOST=127.0.0.1
+$ export X_A_ID_PUBKEY=0279a2f2b499a5345f17d35eff76d5ab45d252560f63347b96e42f8b80045ca435
+$ export HOST=127.0.0.1
 # peerport for Exchange A was set to 10011 in LIGHTNING-01-peers.md
-$ PEER_PORT=10011
-
+$ export PEER_PORT=10011
 $ lncli --rpcserver=localhost:10002 --no-macaroons connect $X_A_ID_PUBKEY@$HOST:$PEER_PORT
 {
     "peer_id": 0
@@ -73,22 +72,11 @@ $ lncli --rpcserver=localhost:10001 --no-macaroons listpeers
 {
     "peers": [
 	{
-	    "pub_key": "03933884aaf1d6b108397e5efe5c86bcf2d8ca8d2f700eda99db9214fc2712b134",
+	    "pub_key": "026832da661d53ee23e88909b70ed1768825deb22f26b0d5519ad0c78a1e528676",
 	    "peer_id": 1,
-	    "address": "34.250.234.192:9735",
-	    "bytes_sent": "71937",
-	    "bytes_recv": "82799",
-	    "sat_sent": "0",
-	    "sat_recv": "0",
-	    "inbound": true,
-	    "ping_time": "7859649"
-	},
-	{
-	    "pub_key": "0248a05db7c3996df2699fca9a9a1f843c723b50a6178e805416150b199b5c44bc",
-	    "peer_id": 2,
-	    "address": "127.0.0.1:40270",
+	    "address": "127.0.0.1:45634",
 	    "bytes_sent": "149",
-	    "bytes_recv": "7",
+	    "bytes_recv": "149",
 	    "sat_sent": "0",
 	    "sat_recv": "0",
 	    "inbound": false,
@@ -104,15 +92,15 @@ $ lncli --rpcserver=localhost:10002 --no-macaroons listpeers
 {
     "peers": [
 	{
-	    "pub_key": "026a2f91860f43b03aff44246652a464e68a678251d6d6e0f24a8c4398b8333aa7",
+	    "pub_key": "0279a2f2b499a5345f17d35eff76d5ab45d252560f63347b96e42f8b80045ca435",
 	    "peer_id": 1,
 	    "address": "127.0.0.1:10011",
-	    "bytes_sent": "7",
-	    "bytes_recv": "149",
+	    "bytes_sent": "175",
+	    "bytes_recv": "175",
 	    "sat_sent": "0",
 	    "sat_recv": "0",
 	    "inbound": true,
-	    "ping_time": "0"
+	    "ping_time": "511"
 	}
     ]
 }
