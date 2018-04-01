@@ -271,23 +271,23 @@ $ lncli --rpcserver=localhost:10001 --no-macaroons queryswaproutes --dest=$X_B_I
 {
     "routes": [
 	{
-	    "total_time_lock": 304124,
+	    "total_time_lock": 480138,
 	    "total_fees": "0",
 	    "total_amt": "100000",
 	    "hops": [
 		{
-		    "chan_id": "333714973170008064",
+		    "chan_id": "527244412821045248",
 		    "chan_capacity": "10000000",
 		    "amt_to_forward": "100000",
 		    "fee": "0",
-		    "expiry": 303548
+		    "expiry": 479562
 		},
 		{
-		    "chan_id": "1381475887161802752",
+		    "chan_id": "1418272143300296704",
 		    "chan_capacity": "16000000",
 		    "amt_to_forward": "1000",
 		    "fee": "0",
-		    "expiry": 1256476
+		    "expiry": 1289922
 		}
 	    ]
 	}
@@ -297,23 +297,23 @@ $ lncli --rpcserver=localhost:10001 --no-macaroons queryswaproutes --dest=$X_B_I
 {
     "routes": [
 	{
-	    "total_time_lock": 1256615,
+	    "total_time_lock": 1290059,
 	    "total_fees": "0",
 	    "total_amt": "10",
 	    "hops": [
 		{
-		    "chan_id": "1381475887161802752",
+		    "chan_id": "1418272143300296704",
 		    "chan_capacity": "16000000",
 		    "amt_to_forward": "10",
 		    "fee": "0",
-		    "expiry": 1256471
+		    "expiry": 1289915
 		},
 		{
-		    "chan_id": "333714973170008064",
+		    "chan_id": "527244412821045248",
 		    "chan_capacity": "10000000",
 		    "amt_to_forward": "1000",
 		    "fee": "0",
-		    "expiry": 303521
+		    "expiry": 479535
 		}
 	    ]
 	}
@@ -327,23 +327,23 @@ $ lncli --rpcserver=localhost:10002 --no-macaroons queryswaproutes --dest=$X_A_I
 {
     "routes": [
 	{
-	    "total_time_lock": 304124,
+	    "total_time_lock": 480139,
 	    "total_fees": "0",
 	    "total_amt": "100000",
 	    "hops": [
 		{
-		    "chan_id": "333714973170008064",
+		    "chan_id": "527244412821045248",
 		    "chan_capacity": "10000000",
 		    "amt_to_forward": "100000",
 		    "fee": "0",
-		    "expiry": 303548
+		    "expiry": 479563
 		},
 		{
-		    "chan_id": "1381475887161802752",
+		    "chan_id": "1418272143300296704",
 		    "chan_capacity": "16000000",
 		    "amt_to_forward": "1000",
 		    "fee": "0",
-		    "expiry": 1256478
+		    "expiry": 1289922
 		}
 	    ]
 	}
@@ -353,23 +353,23 @@ $ lncli --rpcserver=localhost:10002 --no-macaroons queryswaproutes --dest=$X_A_I
 {
     "routes": [
 	{
-	    "total_time_lock": 1256615,
+	    "total_time_lock": 1290059,
 	    "total_fees": "0",
 	    "total_amt": "10",
 	    "hops": [
 		{
-		    "chan_id": "1381475887161802752",
+		    "chan_id": "1418272143300296704",
 		    "chan_capacity": "16000000",
 		    "amt_to_forward": "10",
 		    "fee": "0",
-		    "expiry": 1256471
+		    "expiry": 1289915
 		},
 		{
-		    "chan_id": "333714973170008064",
+		    "chan_id": "527244412821045248",
 		    "chan_capacity": "10000000",
 		    "amt_to_forward": "1000",
 		    "fee": "0",
-		    "expiry": 303521
+		    "expiry": 479536
 		}
 	    ]
 	}
